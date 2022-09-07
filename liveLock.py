@@ -19,7 +19,6 @@ def settime():
             cutoff = ['','']
             print(f"Error interpretting input, follow example and try again\n{e}")
     return cutoff
-#print("You have 5 seconds to minimize this window before mouse control is handed over")
 
 def hour():
     hr = int(re.findall(r"^\d+",str(datetime.datetime.now().time()))[0])
@@ -38,6 +37,8 @@ def main():
     pos = (1907,1066)
     cutoff = ['','']
     cutoff = settime()
+    print("You have 5 seconds to minimize this window before mouse control is handed over")
+    time.sleep(5)
     while hour() != cutoff:
         print(f"hour() ==> {hour()}\ncutoff ==> {cutoff}")
         #if keyboard.is_pressed('k'):
